@@ -22,7 +22,7 @@ The Campus Calm website is designed to help students manage stress effectively t
 
 1. Open the HTML file in a web browser to view the webpage.
 2. Images: Make sure to replace placeholder image sources (e.g., `logo.png`, `student-stressed.jpg`) with actual image paths in your project directory.
-3. Navigation Links*: Update the href attributes in the navigation links to point to actual pages if you expand the website.
+3. Navigation Links: Update the href attributes in the navigation links to point to actual pages if you expand the website.
 
 ## Future Enhancements
 
