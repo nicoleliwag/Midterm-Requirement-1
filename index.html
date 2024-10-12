@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Calm - Managing Stress: Essential Tips for Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f4f8;
+        }
+
+        /* Header Styles */
+        header {
+            position: sticky; 
+            top: 0; 
+            background-color: #06768d; 
+            z-index: 1000; 
+        }
+
+        .header-container {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px; 
+        }
+
+        .header-container h1 {
+            font-family: verdana;
+        }
+
+        /* Logo and Website Name */
+        .logo {
+            display: flex; 
+            align-items: center; 
+        }
+
+        .logo img {
+            max-height: 50px; 
+            margin-right: 10px; 
+        }
+
+        .logo h1 {
+            margin: 0;
+            color: white; 
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex; 
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 20px; 
+            transition: transform 0.3s ease; 
+        }
+
+        /* Icon Animation */
+        .nav-links a:hover {
+            transform: scale(1.1); 
+        }
+
+        .nav-icon {
+            max-height: 30px; 
+            width: auto; 
+            vertical-align: middle; 
+            transition: opacity 0.3s ease; 
+        }
+
+        .nav-links a:hover .nav-icon {
+            opacity: 0.8; /* Slightly fade the icon on hover */
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%; 
+            background-color: rgba(64, 224, 208, 0.25); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .overlay h2 {
+            font-size: 2rem;
+            color: #333;
+            margin: 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .overlay p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 5px 0 0;
+            animation: fadeIn 0.7s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .article-content {
+            flex: 3; /* Adjusts the width of the content area */
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(6, 119, 141, 0.2);
+            animation: popIn 0.5s ease-in-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tip {
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .tip:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(6, 119, 141, 0.2);
+        }
+
+        .tip img {
+            width: 70%;
+            height: auto;
+            max-width: 800px; 
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s;
+        }
+
+        .tip img:hover {
+            transform: scale(1.05);
+        }
+
+        .tip-title {
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #06768d;
+            border-bottom: 2px solid #06768d; /* Underline effect */
+            padding-bottom: 5px;
+        }
+
+        .sidebar {
+            flex: 1; /* Adjusts the width of the sidebar */
+            margin-left: 20px;
+        }
+
+        .related-articles {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(6, 119, 141, 0.2);
+        }
+
+        .related-articles h3, .comments-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            background: #06768d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .article {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .article:hover {
+            background-color: #f9f9f9;
+        }
+
+        .article img {
+            width: 100%; /* Make all related article images the same size */
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .quick-tips, .motivational-quotes {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(6, 119, 141, 0.2);
+            margin-top: 20px; 
+        }
+
+        .quick-tips h3, .motivational-quotes h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            background: #06768d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .quick-tips ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .motivational-quotes p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .comments-section {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(6, 119, 141, 0.2);
+        }
+
+        .comment {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center; 
+            position: relative; /* Enable positioning of the pseudo-element */
+            padding-right: 15px; 
+        }
+
+        .comment::after {
+            content: ''; /* Empty content for the pseudo-element */
+            position: absolute; /* Positioning it relative to .comment */
+            right: 0; 
+            top: 0; 
+            height: 60%; 
+            width: 5px; 
+            background-color: #06768d; 
+            border-radius: 0px; 
+        }
+
+        .comment img {
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #06768d;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #045f6b;
+        }
+
+        footer {
+            background-color: #06768d;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="Website Logo">
+            <h1>Campus Calm</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">
+                <img src="home.png" alt="Home" class="nav-icon">
+            </a>
+            <a href="#about">
+                <img src="about-us.png" alt="About Us" class="nav-icon">
+            </a>
+            <a href="#search">
+                <img src="search.png" alt="Search" class="nav-icon">
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+
+<div class="image-container">
+    <img src="student-stressed.jpg" alt="Sample Image">
+    <div class="overlay">
+        <h2>Managing Stress: Essential Tips for Students</h2>
+        <p>Learn how to balance schoolwork, extracurriculars, and personal life with these practical stress-management tips.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="article-content">
+        <div class="article-content">
+        <h2>Managing Stress: Essential Tips for Students</h2>
+        <p>As a student, balancing schoolwork, extracurricular activities, and personal life can feel overwhelming. Stress is a common part of student life, but if not managed properly, it can affect both mental and physical health. Here are some practical tips to help students manage stress and stay healthy.</p>
+
+        <div class="tip">
+            <div class="tip-title">1. Prioritize Your Time</div>
+            <p>Effective time management is crucial in reducing stress. Break your tasks down into smaller, manageable chunks, and set realistic deadlines for yourself. Using tools like planners or digital apps can help you stay on top of your responsibilities without feeling overwhelmed. By organizing your day in advance, you can allocate sufficient time for each task without panicking. Don't forget to set aside time for relaxation too, as it's an important part of staying balanced.</p>
+            <img src="time.png" alt="Time Management"> 
+            <p>Many students find it helpful to tackle harder tasks in the morning when their energy levels are higher. Plan your day with this in mind, and remember that prioritizing isn't just about doing more—it's about doing what's most important.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">2. Take Breaks and Rest</div>
+            <p>It might be tempting to power through long study sessions, but taking breaks is essential for maintaining focus and productivity. Try the Pomodoro Technique—25 minutes of focused work followed by a 5-minute break. Short breaks give your mind a chance to relax and recharge. When you return to your work, you'll feel refreshed and more capable of retaining information. Taking a walk, stretching, or even grabbing a quick snack can help reset your brain for the next study session.</p>
+            <img src="pomo.png" alt="Taking Breaks"> 
+            <p>It's not just about breaks, but about the quality of the rest you take. Try to incorporate light physical movement into your breaks to keep the blood flowing and to boost your energy.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">3. Practice Relaxation Techniques</div>
+            <p>Incorporating relaxation techniques like deep breathing, meditation, or even yoga can significantly reduce stress levels. These practices help calm the mind and body, making it easier to deal with academic pressures. Just 10 minutes of mindfulness or meditation a day can make a difference. Even simple breathing exercises, such as inhaling deeply through the nose and exhaling slowly through the mouth, can calm your nervous system and reduce anxiety.</p>
+            <img src="relaxing.jpg" alt="Relaxation Techniques"> 
+            <p>Students often think that they don't have time for these techniques, but the reality is that they can improve your efficiency by helping you maintain a calm and focused mind. Consider starting your day with a short meditation session for maximum benefits.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">4. Stay Active</div>
+            <p>Physical exercise is one of the most effective ways to combat stress. Regular movement helps release endorphins, which are the body's natural mood elevators. Whether it's a quick workout, a run, or even a walk around campus, staying active can help clear your mind and reduce tension. Aim for at least 30 minutes of physical activity a day. This doesn't have to be high-intensity; even a casual stroll outside can help refresh your mind.</p>
+            <img src="active.jpg" alt="Staying Active"> 
+            <p>Exercise is not just about staying fit—it can be a mental reset button. Even if you feel like you don't have time, a 15-minute jog can help you return to your work with a clearer mind.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">5. Stay Connected</div>
+            <p>Social support plays a key role in managing stress. Whether it's talking to friends, family, or even counselors, sharing your feelings can help reduce the burden. Don't hesitate to seek support when you need it—sometimes just talking to someone can provide relief. Surround yourself with a positive support system, and don't be afraid to share your thoughts and emotions when things get tough. You're never alone, and sometimes a fresh perspective is all you need to tackle a problem.</p>
+            <img src="fam.jpg" alt="Staying Connected"> 
+            <p>On especially tough days, reaching out to others can make all the difference. Studies have shown that people with strong social ties tend to manage stress better and maintain a more positive outlook.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">6. Get Enough Sleep</div>
+            <p>Sleep is essential for both academic performance and mental health. Lack of sleep can heighten stress and make it harder to concentrate. Make sure to get 7-9 hours of sleep every night to keep your body and mind functioning optimally. Establish a regular bedtime routine, and avoid stimulating activities like studying or using electronic devices right before bed. This can help signal to your body that it's time to wind down, making it easier to fall asleep.</p>
+            <img src="sleep.jpeg" alt="Getting Enough Sleep"> 
+            <p>It's not just about the number of hours of sleep, but the quality of sleep too. Consider investing in a good pillow or maintaining a consistent sleep schedule to maximize rest and minimize stress.</p>
+        </div>
+
+        <p>Stress is a natural part of student life, but with the right strategies, it can be managed effectively. By balancing your time, staying active, practicing relaxation techniques, and staying connected with loved ones, you can reduce stress and focus on enjoying your student experience. Remember, it's okay to ask for help if you need it. Managing stress is a journey, and finding what works best for you can make all the difference in your overall well-being.</p>
+        </div>
+
+    </div>
+
+    <aside class="sidebar">
+        <div class="related-articles">
+            <h3>Related Articles</h3>
+            <div class="article">
+                <p><strong>Understanding Mental Health: Tips for Students</strong></p>
+                <img src="mental-health.png" alt="Mental Health"> 
+                <p>This article provides insights into understanding mental health issues and how to seek help as a student.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="article">
+                <p><strong>Time Management Techniques for Academic Success</strong></p>
+                <img src="time-management.png" alt="Time Management Techniques"> 
+                <p>Discover effective time management strategies to boost your productivity and reduce stress.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="article">
+                <p><strong>The Importance of Self-Care for Students</strong></p>
+                <img src="self-care.png" alt="Self-Care"> 
+                <p>Learn how self-care practices can enhance your overall well-being and academic performance.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+                <div class="quick-tips">
+            <h3>Quick Tips for Managing Stress:</h3>
+            <ul>
+                <li>Take short breaks during study sessions to recharge.</li>
+                <li>Stay hydrated and maintain a balanced diet.</li>
+                <li>Limit caffeine and sugar intake to reduce anxiety.</li>
+                <li>Engage in creative hobbies for relaxation.</li>
+            </ul>
+        </div>
+        
+        <div class="motivational-quotes">
+            <h3>Motivational Quotes:</h3>
+            <p>"The greatest weapon against stress is our ability to choose one thought over another." - William James</p>
+            <p>"It's not the load that breaks you down, it's the way you carry it." - Lou Holtz</p>
+        </div>
+
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <div class="comment">
+                <img src="julie.jpg" alt="User 1">
+                <div>
+                    <strong>Julie Cruz:</strong> These tips are super helpful! Thanks for sharing!
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="cess.jpg" alt="User 2">
+                <div>
+                    <strong>Princess Co:</strong> I need to work on my time management. This article is a great reminder!
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="tope.jpg" alt="User 3">
+                <div>
+                    <strong>Christopher Canson:</strong> Love the mindfulness suggestions! I'll definitely try them out.
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="ayu.jpg" alt="User 4">
+                <div>
+                    <strong>Ayu America:</strong> Great tips on stress relief! I'm excited to give them a go.
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="bea.jpg" alt="User 5">
+                <div>
+                    <strong>Beatriz Alentejo:</strong> I appreciate these wellness ideas! How do you stay consistent with them?.
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="chie.jpg" alt="User 6">
+                <div>
+                    <strong>Richie Comon:</strong> Fantastic insights on mental health! What do you recommend for beginners?
+                    <br><br><br>
+                </div>
+            </div>
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button>Post Comment</button>
+        </div>
+    </aside>
+</div>
+
+<!-- Footer Section -->
+<footer style="background-color: #06768d; color: white; padding: 20px; text-align: center;">
+    <h3>Reach Us</h3>
+    <div class="social-icons" style="margin: 10px 0;">
+        <a href="#"><img src="Facebook-Logo.png" alt="Facebook"></a>
+        <a href="#"><img src="Instagram-Logo.png" alt="Twitter"></a>
+        <a href="#"><img src="Mail-Logo.png" alt="Instagram"></a>
+    </div>
+    <p>&copy; 2024 Campus Calm. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
